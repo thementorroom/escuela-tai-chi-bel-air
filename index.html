@@ -1,0 +1,1242 @@
+<!doctype html>
+<html lang="es" data-language="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Escuela de Tai Chi de Bel-Air</title>
+  <meta name="description" content="Escuela de Tai Chi de Bel-Air: clases de Tai Chi y Qigong para equilibrio, movilidad, respiración, calma mental y conciencia corporal.">
+  <meta name="theme-color" content="#163b31">
+
+  <style>
+    :root{
+      --ink:#171717;
+      --soft:#f7f3ea;
+      --paper:#fffdf7;
+      --muted:#68635d;
+      --line:rgba(23,23,23,.13);
+      --green:#163b31;
+      --gold:#b59a5b;
+      --shadow:0 18px 50px rgba(0,0,0,.12);
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%,rgba(181,154,91,.16),transparent 28%),
+        radial-gradient(circle at 90% 4%,rgba(22,59,49,.12),transparent 30%),
+        var(--soft);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.55;
+    }
+
+    h1,h2,h3,.brand{
+      font-family:Georgia,"Times New Roman",serif;
+      line-height:1.08;
+      margin:0;
+      color:var(--green);
+    }
+
+    a{color:inherit}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(247,243,234,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .logo-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+    }
+
+    .logo{
+      width:52px;
+      height:52px;
+      border-radius:50%;
+      border:2px solid var(--ink);
+      display:grid;
+      place-items:center;
+      background:var(--paper);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .logo:before{
+      content:"";
+      width:34px;
+      height:34px;
+      border-radius:50%;
+      background:linear-gradient(90deg,var(--ink) 50%,#fff 50%);
+      border:1px solid var(--ink);
+      display:block;
+    }
+
+    .brand{
+      font-size:22px;
+      text-transform:uppercase;
+    }
+
+    .tag{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    .links{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      font-size:14px;
+    }
+
+    .links a{
+      text-decoration:none;
+    }
+
+    .links a:hover{
+      color:var(--gold);
+    }
+
+    .lang-toggle{
+      display:flex;
+      gap:5px;
+      padding:4px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.55);
+    }
+
+    .lang-toggle button{
+      border:0;
+      background:transparent;
+      border-radius:999px;
+      padding:8px 10px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .lang-toggle button.active{
+      background:var(--green);
+      color:white;
+    }
+
+    .mobile-menu{
+      display:none;
+      border:1px solid var(--line);
+      background:var(--paper);
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:800;
+      cursor:pointer;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:13px 18px;
+      border-radius:14px;
+      border:0;
+      background:var(--green);
+      color:white;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow:0 10px 22px rgba(22,59,49,.22);
+      cursor:pointer;
+      transition:.18s;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+    }
+
+    .btn.secondary{
+      background:transparent;
+      color:var(--green);
+      border:1px solid rgba(22,59,49,.25);
+      box-shadow:none;
+    }
+
+    .btn.gold{
+      background:var(--gold);
+      color:#16130b;
+    }
+
+    .hero{
+      max-width:var(--max);
+      margin:28px auto 0;
+      padding:0 18px 26px;
+    }
+
+    .hero-card{
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      background:linear-gradient(120deg,rgba(255,253,247,.98),rgba(241,234,219,.95));
+      border:1px solid rgba(181,154,91,.32);
+      border-radius:32px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      min-height:540px;
+    }
+
+    .hero-copy{
+      padding:58px 46px;
+    }
+
+    .eyebrow{
+      font-size:12px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:#876f39;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:clamp(42px,6vw,72px);
+      max-width:820px;
+    }
+
+    .lead{
+      font-size:19px;
+      color:var(--muted);
+      max-width:700px;
+      margin:24px 0 28px;
+    }
+
+    .hero-actions,.contact-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .contact-strip{
+      margin-top:24px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.62);
+      border:1px solid var(--line);
+      font-size:14px;
+    }
+
+    .hero-visual{
+      min-height:420px;
+      background:
+        radial-gradient(circle at 45% 35%,rgba(255,255,255,.9),transparent 23%),
+        linear-gradient(120deg,rgba(22,59,49,.05),rgba(181,154,91,.16));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:34px;
+    }
+
+    .zen-card{
+      width:min(420px,100%);
+      min-height:410px;
+      border-radius:28px;
+      background:var(--paper);
+      border:1px solid rgba(181,154,91,.35);
+      box-shadow:0 26px 65px rgba(22,59,49,.16);
+      padding:32px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .zen-card:before{
+      content:"";
+      position:absolute;
+      inset:auto -70px -80px auto;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      border:34px solid rgba(22,59,49,.10);
+    }
+
+    .bamboo{
+      position:absolute;
+      left:24px;
+      top:24px;
+      width:90px;
+      height:210px;
+      opacity:.22;
+      background:
+        linear-gradient(90deg,transparent 45%,var(--green) 46%,var(--green) 54%,transparent 55%),
+        linear-gradient(transparent 16%,var(--green) 17%,var(--green) 18%,transparent 19%),
+        linear-gradient(transparent 36%,var(--green) 37%,var(--green) 38%,transparent 39%),
+        linear-gradient(transparent 56%,var(--green) 57%,var(--green) 58%,transparent 59%),
+        linear-gradient(transparent 76%,var(--green) 77%,var(--green) 78%,transparent 79%);
+    }
+
+    .taiji-big{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      border:2px solid var(--ink);
+      background:linear-gradient(90deg,var(--ink) 50%,#fff 50%);
+      box-shadow:0 12px 28px rgba(0,0,0,.13);
+      position:relative;
+      z-index:1;
+    }
+
+    .quote{
+      font-family:Georgia,serif;
+      font-size:25px;
+      color:var(--green);
+      position:relative;
+      z-index:1;
+    }
+
+    .quote small{
+      display:block;
+      font-family:system-ui;
+      color:var(--muted);
+      font-size:15px;
+      margin-top:12px;
+    }
+
+    .section{
+      max-width:var(--max);
+      margin:auto;
+      padding:68px 18px;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:24px;
+      margin-bottom:30px;
+    }
+
+    h2{
+      font-size:clamp(32px,4vw,50px);
+    }
+
+    h3{
+      font-size:23px;
+    }
+
+    .sub{
+      color:var(--muted);
+      max-width:740px;
+      font-size:17px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .grid-6{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:14px;
+    }
+
+    .card{
+      background:var(--paper);
+      border:1px solid rgba(181,154,91,.32);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 12px 30px rgba(0,0,0,.06);
+    }
+
+    .benefit{
+      text-align:center;
+      padding:20px 14px;
+    }
+
+    .icon{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .benefit p,.card p{
+      color:var(--muted);
+      margin-bottom:0;
+    }
+
+    .band{
+      background:linear-gradient(135deg,var(--green),#071f1a);
+      color:white;
+    }
+
+    .band h2,.band h3{
+      color:#fff8e9;
+    }
+
+    .band .sub,.band p{
+      color:rgba(255,255,255,.78);
+    }
+
+    .band .card{
+      background:rgba(255,255,255,.08);
+      border-color:rgba(181,154,91,.40);
+    }
+
+    .curriculum{
+      display:grid;
+      grid-template-columns:repeat(9,1fr);
+      gap:10px;
+    }
+
+    .step{
+      background:var(--paper);
+      border:1px solid rgba(181,154,91,.32);
+      border-radius:18px;
+      padding:16px 10px;
+      text-align:center;
+      min-height:116px;
+    }
+
+    .num{
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      margin:0 auto 8px;
+      display:grid;
+      place-items:center;
+      background:var(--green);
+      color:white;
+      font-weight:900;
+    }
+
+    .booking-wrap{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    label{
+      display:block;
+      font-weight:800;
+      color:var(--green);
+      margin:14px 0 6px;
+    }
+
+    input,select,textarea{
+      width:100%;
+      padding:13px 14px;
+      border-radius:13px;
+      border:1px solid rgba(22,59,49,.22);
+      background:#fffefa;
+      color:var(--ink);
+      font:inherit;
+    }
+
+    textarea{
+      min-height:105px;
+      resize:vertical;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .status{
+      margin-top:14px;
+      padding:14px;
+      border-radius:16px;
+      font-weight:750;
+      background:rgba(181,154,91,.13);
+      border:1px solid rgba(181,154,91,.28);
+    }
+
+    .status.ok{
+      background:rgba(22,59,49,.09);
+      color:var(--green);
+      border-color:rgba(22,59,49,.22);
+    }
+
+    .status.no{
+      background:rgba(135,34,34,.09);
+      color:#7b2020;
+      border-color:rgba(135,34,34,.20);
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .footer{
+      background:#071f1a;
+      color:white;
+      padding:36px 18px;
+      margin-top:40px;
+    }
+
+    .footer-inner{
+      max-width:var(--max);
+      margin:auto;
+      display:grid;
+      grid-template-columns:1.2fr .8fr .8fr;
+      gap:22px;
+    }
+
+    .footer h3{
+      color:#fff8e9;
+    }
+
+    .footer .tag{
+      color:rgba(255,255,255,.7);
+    }
+
+    .footer a{
+      color:white;
+      text-decoration:none;
+    }
+
+    .floating{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:30;
+      border-radius:999px;
+    }
+
+    [data-lang]{display:none}
+
+    html[data-language="es"] [data-lang="es"],
+    html[data-language="en"] [data-lang="en"]{
+      display:revert;
+    }
+
+    html[data-language="es"] div[data-lang="es"],
+    html[data-language="en"] div[data-lang="en"],
+    html[data-language="es"] section[data-lang="es"],
+    html[data-language="en"] section[data-lang="en"]{
+      display:block;
+    }
+
+    @media(max-width:1000px){
+      .hero-card,.booking-wrap{
+        grid-template-columns:1fr;
+      }
+
+      .grid-6{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .grid-3{
+        grid-template-columns:1fr;
+      }
+
+      .curriculum{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .footer-inner{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:760px){
+      .links{
+        display:none;
+        position:absolute;
+        left:14px;
+        right:14px;
+        top:76px;
+        flex-direction:column;
+        align-items:flex-start;
+        background:var(--paper);
+        border:1px solid var(--line);
+        border-radius:20px;
+        padding:16px;
+        box-shadow:var(--shadow);
+      }
+
+      .links.open{
+        display:flex;
+      }
+
+      .mobile-menu{
+        display:inline-flex;
+      }
+
+      .brand{
+        font-size:18px;
+      }
+
+      .hero{
+        padding:0 10px 20px;
+      }
+
+      .hero-copy{
+        padding:42px 24px;
+      }
+
+      .section{
+        padding:50px 14px;
+      }
+
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .curriculum{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .grid-6{
+        grid-template-columns:1fr;
+      }
+
+      .floating{
+        left:18px;
+        right:18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="logo-wrap" href="#inicio">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand">Escuela de Tai Chi</div>
+          <div class="tag">Bel-Air · Estepona</div>
+        </div>
+      </a>
+
+      <button class="mobile-menu" id="menuBtn" type="button">Menú</button>
+
+      <div class="links" id="navLinks">
+        <a href="#beneficios" data-lang="es">Beneficios</a>
+        <a href="#beneficios" data-lang="en">Benefits</a>
+
+        <a href="#temario" data-lang="es">Temario</a>
+        <a href="#temario" data-lang="en">Curriculum</a>
+
+        <a href="#contacto" data-lang="es">Contacto</a>
+        <a href="#contacto" data-lang="en">Contact</a>
+
+        <a href="#pago">Bizum</a>
+
+        <div class="lang-toggle">
+          <button id="esBtn" class="active" type="button">ES</button>
+          <button id="enBtn" type="button">EN</button>
+        </div>
+
+        <a class="btn" id="topWa" href="https://wa.me/34637341417" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <div class="eyebrow">Bel-Air · Estepona · Tai Chi · Qigong</div>
+
+          <div data-lang="es">
+            <h1>Escuela de Tai Chi de Bel-Air</h1>
+            <p class="lead">
+              Clases de Tai Chi y Qigong para desarrollar equilibrio, movilidad, respiración,
+              calma mental y conciencia corporal desde una práctica progresiva y saludable.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn" href="#contacto">Solicitar información</a>
+              <a class="btn secondary" href="#temario">Ver temario</a>
+            </div>
+
+            <div class="contact-strip">
+              <span class="pill">📲 WhatsApp: +34 637 34 14 17</span>
+              <span class="pill">💳 Bizum: +34 637 34 14 17</span>
+              <span class="pill">📍 Bel-Air · Estepona</span>
+            </div>
+          </div>
+
+          <div data-lang="en">
+            <h1>Tai Chi School of Bel-Air</h1>
+            <p class="lead">
+              Tai Chi and Qigong classes to develop balance, mobility, breathing,
+              mental calm and body awareness through a progressive and healthy practice.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn" href="#contacto">Request information</a>
+              <a class="btn secondary" href="#temario">See curriculum</a>
+            </div>
+
+            <div class="contact-strip">
+              <span class="pill">📲 WhatsApp: +34 637 34 14 17</span>
+              <span class="pill">💳 Bizum: +34 637 34 14 17</span>
+              <span class="pill">📍 Bel-Air · Estepona</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="zen-card">
+            <div class="bamboo"></div>
+            <div class="taiji-big"></div>
+
+            <div class="quote">
+              <span data-lang="es">“En el movimiento, busca la quietud; en la quietud, prepara el movimiento.”</span>
+              <span data-lang="en">“Within movement, seek stillness; within stillness, prepare movement.”</span>
+
+              <small data-lang="es">Práctica consciente, suave y constante.</small>
+              <small data-lang="en">Conscious, gentle and consistent practice.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="section-title">
+        <div data-lang="es">
+          <h2>Beneficios del Tai Chi</h2>
+          <p class="sub">
+            Una práctica amable para mejorar la relación con el cuerpo sin forzar:
+            movimiento lento, atención, respiración y coordinación.
+          </p>
+        </div>
+
+        <div data-lang="en">
+          <h2>Benefits of Tai Chi</h2>
+          <p class="sub">
+            A gentle practice to improve your relationship with the body without forcing:
+            slow movement, attention, breathing and coordination.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid-6">
+        <article class="card benefit">
+          <div class="icon">⚖️</div>
+          <h3 data-lang="es">Equilibrio</h3>
+          <h3 data-lang="en">Balance</h3>
+          <p data-lang="es">Estabilidad y seguridad corporal.</p>
+          <p data-lang="en">Stability and body confidence.</p>
+        </article>
+
+        <article class="card benefit">
+          <div class="icon">🌿</div>
+          <h3 data-lang="es">Movilidad</h3>
+          <h3 data-lang="en">Mobility</h3>
+          <p data-lang="es">Articulaciones más libres.</p>
+          <p data-lang="en">Freer joints and movement.</p>
+        </article>
+
+        <article class="card benefit">
+          <div class="icon">🫁</div>
+          <h3 data-lang="es">Respiración</h3>
+          <h3 data-lang="en">Breathing</h3>
+          <p data-lang="es">Respiración natural y tranquila.</p>
+          <p data-lang="en">Natural and calm breathing.</p>
+        </article>
+
+        <article class="card benefit">
+          <div class="icon">🧘</div>
+          <h3 data-lang="es">Calma mental</h3>
+          <h3 data-lang="en">Mental calm</h3>
+          <p data-lang="es">Atención y regulación del estrés.</p>
+          <p data-lang="en">Attention and stress regulation.</p>
+        </article>
+
+        <article class="card benefit">
+          <div class="icon">🧍</div>
+          <h3 data-lang="es">Postura</h3>
+          <h3 data-lang="en">Posture</h3>
+          <p data-lang="es">Eje, raíz y alineación suave.</p>
+          <p data-lang="en">Axis, root and soft alignment.</p>
+        </article>
+
+        <article class="card benefit">
+          <div class="icon">☯️</div>
+          <h3 data-lang="es">Coordinación</h3>
+          <h3 data-lang="en">Coordination</h3>
+          <p data-lang="es">Cuerpo, intención y movimiento.</p>
+          <p data-lang="en">Body, intention and movement.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section">
+        <div class="section-title">
+          <div data-lang="es">
+            <h2>Citas clásicas</h2>
+            <p class="sub">Frases inspiradoras para orientar la práctica con sencillez y profundidad.</p>
+          </div>
+
+          <div data-lang="en">
+            <h2>Classic quotes</h2>
+            <p class="sub">Inspiring phrases to guide practice with simplicity and depth.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3 data-lang="es">Lo blando vence a lo duro</h3>
+            <h3 data-lang="en">The soft overcomes the hard</h3>
+            <p>Tao Te Ching</p>
+          </article>
+
+          <article class="card">
+            <h3 data-lang="es">En el movimiento, busca la quietud</h3>
+            <h3 data-lang="en">Within movement, seek stillness</h3>
+            <p>Taiji Classics</p>
+          </article>
+
+          <article class="card">
+            <h3 data-lang="es">Quien se conoce a sí mismo es iluminado</h3>
+            <h3 data-lang="en">He who knows himself is enlightened</h3>
+            <p>Tao Te Ching</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="temario">
+      <div class="section-title">
+        <div data-lang="es">
+          <h2>Temario</h2>
+          <p class="sub">
+            El curso se construye desde fundamentos corporales hasta formas de Tai Chi y Qigong.
+          </p>
+        </div>
+
+        <div data-lang="en">
+          <h2>Curriculum</h2>
+          <p class="sub">
+            The course builds from body foundations to Tai Chi and Qigong forms.
+          </p>
+        </div>
+      </div>
+
+      <div class="curriculum">
+        <div class="step">
+          <div class="num">1</div>
+          <strong>Wuji</strong><br>
+          <span data-lang="es">conciencia corporal</span>
+          <span data-lang="en">body awareness</span>
+        </div>
+
+        <div class="step"><div class="num">2</div><strong>Song Gong</strong></div>
+        <div class="step"><div class="num">3</div><strong>Dui La</strong></div>
+        <div class="step"><div class="num">4</div><strong>Vertical Shake</strong></div>
+        <div class="step"><div class="num">5</div><strong>Yang 10 Form</strong></div>
+        <div class="step"><div class="num">6</div><strong>Yang 24 Form</strong></div>
+        <div class="step"><div class="num">7</div><strong>Crane Qigong</strong></div>
+        <div class="step"><div class="num">8</div><strong>Turtle Qigong</strong></div>
+        <div class="step"><div class="num">9</div><strong>Dragon Qigong</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto">
+      <div class="section-title">
+        <div data-lang="es">
+          <h2>Contacto e inscripción</h2>
+          <p class="sub">
+            Rellena el formulario. Guardaremos tu solicitud y se abrirá WhatsApp
+            para confirmar disponibilidad y pago por Bizum.
+          </p>
+        </div>
+
+        <div data-lang="en">
+          <h2>Contact and registration</h2>
+          <p class="sub">
+            Fill in the form. Your request will be saved and WhatsApp will open
+            to confirm availability and Bizum payment.
+          </p>
+        </div>
+      </div>
+
+      <div class="booking-wrap">
+        <div class="card" id="pago">
+          <h3 data-lang="es">Pago por Bizum</h3>
+          <h3 data-lang="en">Bizum payment</h3>
+
+          <p data-lang="es">El pago se confirma manualmente por WhatsApp.</p>
+          <p data-lang="en">Payment is manually confirmed by WhatsApp.</p>
+
+          <p><strong>Bizum:</strong> +34 637 34 14 17</p>
+
+          <p data-lang="es"><strong>Concepto recomendado:</strong> Tai Chi + nombre</p>
+          <p data-lang="en"><strong>Recommended concept:</strong> Tai Chi + name</p>
+
+          <div class="actions">
+            <button class="btn gold" type="button" id="copyBizum">Copiar Bizum</button>
+            <a class="btn secondary" href="https://wa.me/34637341417" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 data-lang="es">Solicitar información</h3>
+          <h3 data-lang="en">Request information</h3>
+
+          <form id="contactForm">
+            <div class="form-grid">
+              <div>
+                <label id="labelName" for="name">Nombre</label>
+                <input id="name" name="name" required>
+              </div>
+
+              <div>
+                <label id="labelEmail" for="email">Email</label>
+                <input id="email" name="email" type="email">
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div>
+                <label id="labelPhone" for="phone">Teléfono</label>
+                <input id="phone" name="phone" required>
+              </div>
+
+              <div>
+                <label id="labelInterest" for="interest">Interés</label>
+                <select id="interest" name="interest" required></select>
+              </div>
+            </div>
+
+            <label id="labelMode" for="mode">Modalidad</label>
+            <select id="mode" name="mode"></select>
+
+            <label id="labelMessage" for="message">Mensaje</label>
+            <textarea id="message" name="message"></textarea>
+
+            <label style="display:flex;gap:10px;align-items:flex-start">
+              <input id="consent" name="consent" type="checkbox" required style="width:auto;margin-top:5px">
+              <span id="consentText">Acepto que se usen mis datos para responder a esta solicitud.</span>
+            </label>
+
+            <div id="formStatus" class="status">Completa el formulario para enviar tu solicitud.</div>
+
+            <div class="actions">
+              <button class="btn" id="submitBtn" type="submit">Enviar solicitud</button>
+              <a class="btn secondary" id="waBtn" href="https://wa.me/34637341417" target="_blank" rel="noopener">WhatsApp directo</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h3 data-lang="es">Práctica saludable</h3>
+        <h3 data-lang="en">Healthy practice</h3>
+
+        <p data-lang="es">
+          Practica sin dolor, sin tensión excesiva y sin buscar resultados rápidos.
+          Si aparece mareo, dolor articular o malestar, reduce la intensidad o detén la práctica.
+        </p>
+
+        <p data-lang="en">
+          Practise without pain, without excessive tension and without chasing quick results.
+          If dizziness, joint pain or discomfort appears, reduce intensity or stop the practice.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <h3>Escuela de Tai Chi de Bel-Air</h3>
+        <div class="tag">Bel-Air · Estepona</div>
+      </div>
+
+      <div>
+        <strong>WhatsApp</strong><br>
+        <a href="https://wa.me/34637341417" target="_blank" rel="noopener">+34 637 34 14 17</a>
+      </div>
+
+      <div>
+        <strong>Bizum</strong><br>
+        +34 637 34 14 17
+      </div>
+    </div>
+  </footer>
+
+  <a class="btn floating" id="floatingWa" href="https://wa.me/34637341417" target="_blank" rel="noopener">📲 WhatsApp</a>
+
+  <script>
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxaIiU5c-vwINW5-1eBAb3qqhNMZ7gT4OIOPzBGdMfAZO-NJRdsCpLm0Lv04G6_A-7g-A/exec";
+    const WHATSAPP_NUMBER = "34637341417";
+
+    let currentLang = "es";
+
+    const data = {
+      es: {
+        title: "Escuela de Tai Chi de Bel-Air",
+        menu: "Menú",
+        labels: {
+          name:"Nombre",
+          email:"Email",
+          phone:"Teléfono",
+          interest:"Interés",
+          mode:"Modalidad",
+          message:"Mensaje"
+        },
+        interests: [
+          "Información general",
+          "Clase suelta",
+          "Mensualidad",
+          "Tai Chi",
+          "Qigong",
+          "Yang 10 Form",
+          "Yang 24 Form"
+        ],
+        modes: [
+          "Presencial en Bel-Air / Estepona",
+          "Online",
+          "Grupo",
+          "Clase individual"
+        ],
+        consent: "Acepto que se usen mis datos para responder a esta solicitud.",
+        statusStart: "Completa el formulario para enviar tu solicitud.",
+        sending: "Enviando solicitud...",
+        sent: "Solicitud enviada. Ahora puedes confirmar por WhatsApp.",
+        error: "No se pudo guardar. Escríbenos directamente por WhatsApp.",
+        submit: "Enviar solicitud",
+        direct: "WhatsApp directo",
+        copied: "Número Bizum copiado.",
+        waTop: "Hola, quiero información sobre la Escuela de Tai Chi de Bel-Air.",
+        waMsg: (v) => `Hola, quiero información sobre la Escuela de Tai Chi de Bel-Air.
+
+Nombre: ${v.name}
+Email: ${v.email}
+Teléfono: ${v.phone}
+Interés: ${v.interest}
+Modalidad: ${v.mode}
+Mensaje: ${v.message}
+
+Quiero confirmar disponibilidad y pago por Bizum.`
+      },
+
+      en: {
+        title: "Tai Chi School of Bel-Air",
+        menu: "Menu",
+        labels: {
+          name:"Name",
+          email:"Email",
+          phone:"Phone",
+          interest:"Interest",
+          mode:"Format",
+          message:"Message"
+        },
+        interests: [
+          "General information",
+          "Single class",
+          "Monthly membership",
+          "Tai Chi",
+          "Qigong",
+          "Yang 10 Form",
+          "Yang 24 Form"
+        ],
+        modes: [
+          "In person in Bel-Air / Estepona",
+          "Online",
+          "Group",
+          "Individual class"
+        ],
+        consent: "I agree that my data may be used to respond to this request.",
+        statusStart: "Complete the form to send your request.",
+        sending: "Sending request...",
+        sent: "Request sent. You can now confirm by WhatsApp.",
+        error: "The request could not be saved. Please write directly on WhatsApp.",
+        submit: "Send request",
+        direct: "Direct WhatsApp",
+        copied: "Bizum number copied.",
+        waTop: "Hello, I would like information about the Tai Chi School of Bel-Air.",
+        waMsg: (v) => `Hello, I would like information about the Tai Chi School of Bel-Air.
+
+Name: ${v.name}
+Email: ${v.email}
+Phone: ${v.phone}
+Interest: ${v.interest}
+Format: ${v.mode}
+Message: ${v.message}
+
+I would like to confirm availability and Bizum payment.`
+      }
+    };
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    const form = document.getElementById("contactForm");
+    const statusBox = document.getElementById("formStatus");
+
+    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+
+    function fillSelect(id, arr) {
+      const el = document.getElementById(id);
+      el.innerHTML = "";
+
+      arr.forEach(x => {
+        const opt = document.createElement("option");
+        opt.value = x;
+        opt.textContent = x;
+        el.appendChild(opt);
+      });
+    }
+
+    function getPayload() {
+      const formData = new FormData(form);
+
+      return {
+        lang: currentLang,
+        name: formData.get("name") || "",
+        email: formData.get("email") || "",
+        phone: formData.get("phone") || "",
+        interest: formData.get("interest") || "",
+        mode: formData.get("mode") || "",
+        message: formData.get("message") || "",
+        consent: formData.get("consent") ? "Sí" : "No",
+        origin: window.location.href
+      };
+    }
+
+    function updateWhatsappLinks() {
+      const lang = data[currentLang];
+
+      const top = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lang.waTop)}`;
+
+      document.getElementById("topWa").href = top;
+      document.getElementById("floatingWa").href = top;
+
+      const payload = getPayload();
+      const text = lang.waMsg(payload);
+
+      document.getElementById("waBtn").href =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    }
+
+    function setLanguage(langCode) {
+      currentLang = langCode;
+
+      document.documentElement.dataset.language = langCode;
+      document.documentElement.lang = langCode;
+      document.title = data[langCode].title;
+
+      document.getElementById("esBtn").classList.toggle("active", langCode === "es");
+      document.getElementById("enBtn").classList.toggle("active", langCode === "en");
+
+      menuBtn.textContent = data[langCode].menu;
+
+      document.getElementById("labelName").textContent = data[langCode].labels.name;
+      document.getElementById("labelEmail").textContent = data[langCode].labels.email;
+      document.getElementById("labelPhone").textContent = data[langCode].labels.phone;
+      document.getElementById("labelInterest").textContent = data[langCode].labels.interest;
+      document.getElementById("labelMode").textContent = data[langCode].labels.mode;
+      document.getElementById("labelMessage").textContent = data[langCode].labels.message;
+
+      document.getElementById("consentText").textContent = data[langCode].consent;
+      document.getElementById("submitBtn").textContent = data[langCode].submit;
+      document.getElementById("waBtn").textContent = data[langCode].direct;
+
+      statusBox.textContent = data[langCode].statusStart;
+      statusBox.className = "status";
+
+      fillSelect("interest", data[langCode].interests);
+      fillSelect("mode", data[langCode].modes);
+
+      updateWhatsappLinks();
+    }
+
+    form.addEventListener("input", updateWhatsappLinks);
+    form.addEventListener("change", updateWhatsappLinks);
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const lang = data[currentLang];
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const payload = getPayload();
+
+      statusBox.textContent = lang.sending;
+      statusBox.className = "status";
+
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        statusBox.textContent = lang.sent;
+        statusBox.className = "status ok";
+
+        const waText = lang.waMsg(payload);
+        const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+
+        window.open(waUrl, "_blank");
+
+        form.reset();
+        setLanguage(currentLang);
+
+      } catch (error) {
+        statusBox.textContent = lang.error;
+        statusBox.className = "status no";
+        updateWhatsappLinks();
+      }
+    });
+
+    document.getElementById("copyBizum").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("+34637341417");
+        alert(data[currentLang].copied);
+      } catch (e) {
+        alert("+34 637 34 14 17");
+      }
+    });
+
+    document.getElementById("esBtn").addEventListener("click", () => setLanguage("es"));
+    document.getElementById("enBtn").addEventListener("click", () => setLanguage("en"));
+
+    setLanguage("es");
+  </script>
+</body>
+</html>
